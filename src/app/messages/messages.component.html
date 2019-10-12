@@ -1,0 +1,3 @@
+<div *ngIf="get().length">
+    <p *ngFor='let message of get()' (click)="clear()">{{message}}</p>
+</div>
