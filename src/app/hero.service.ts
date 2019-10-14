@@ -14,6 +14,12 @@ export class HeroService {
 
   getHeroes() : Observable<Hero[]> {
     this.messageService.add('Fetching heroes...');
-    return of(HEROES).pipe(delay(1000));
+    // return of(HEROES).pipe(delay(1000));
+    return of(HEROES);
+  }
+
+  getHero(id: number): Observable<Hero> {
+    this.messageService.add(`Fetching hero id=${id}...` );
+    return of(HEROES.find(hero => hero.id === id));
   }
 }
